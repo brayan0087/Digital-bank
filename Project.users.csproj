@@ -46,10 +46,10 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
-      <HintPath>packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+      <HintPath>packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
     </Reference>
     <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
-      <HintPath>packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+      <HintPath>packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System" />
@@ -193,11 +193,11 @@
     <Content Include="Scripts\jquery-3.4.1.min.map" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Project.users.bll\Project.users.bll.csproj">
+    <ProjectReference Include="Project.users.bll\Project.users.bll.csproj">
       <Project>{d0d7fef5-e3c1-4fef-8851-f6f1d217ac43}</Project>
       <Name>Project.users.bll</Name>
     </ProjectReference>
-    <ProjectReference Include="..\Project.users.dal\Project.users.dal.csproj">
+    <ProjectReference Include="Project.users.dal\Project.users.dal.csproj">
       <Project>{543b7852-a863-484f-9ac2-03b16d7b9435}</Project>
       <Name>Project.users.dal</Name>
     </ProjectReference>

@@ -21,7 +21,7 @@ namespace Project.users.bll
         public List<ListUserView> Getall()
         {
             List<ListUserView> lista = new List<ListUserView>();
-            using (EntitiesUser db = new EntitiesUser())
+            using (persEntities db = new persEntities())
             {
                 lista = (from d in db.Usuario
                          select new ListUserView
@@ -43,7 +43,7 @@ namespace Project.users.bll
         /// <param name="model"></param>
         public void newtUser(CreateUser model)
         {
-            using (EntitiesUser db = new EntitiesUser())
+            using (persEntities db = new persEntities())
             {
                 if (model.Sexo == Sexo.Masculino)
                 {
@@ -73,7 +73,7 @@ namespace Project.users.bll
         {
             UpdateUser user = new UpdateUser(); 
 
-            using (EntitiesUser db=new EntitiesUser())
+            using (persEntities db =new persEntities())
             {
                 user = (from d in db.Usuario
                          select new UpdateUser
@@ -97,7 +97,7 @@ namespace Project.users.bll
         /// <param name="user"></param>
         public void EditUser(UpdateUser user)
         {
-            using (EntitiesUser db = new EntitiesUser())
+            using (persEntities db = new persEntities())
             {
                 db.EditarUsuario(user.Id, user.Nombre, user.FechaNacimiento, user.Sexo);
             }
@@ -112,7 +112,7 @@ namespace Project.users.bll
 
         public void DeleteUser(int id)
         {
-            using (EntitiesUser db = new EntitiesUser())
+            using (persEntities db = new persEntities())
             {
                 db.EliminarUsuario(id);
             }

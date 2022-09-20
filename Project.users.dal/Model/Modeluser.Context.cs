@@ -15,10 +15,10 @@ namespace Project.users.dal.Model
     using System.Data.Entity.Core.Objects;
     using System.Linq;
     
-    public partial class EntitiesUser : DbContext
+    public partial class persEntities : DbContext
     {
-        public EntitiesUser()
-            : base("name=EntitiesUser")
+        public persEntities()
+            : base("name=persEntities")
         {
         }
     
@@ -28,15 +28,6 @@ namespace Project.users.dal.Model
         }
     
         public virtual DbSet<Usuario> Usuario { get; set; }
-    
-        public virtual ObjectResult<ConsultarUsuario_Result> ConsultarUsuario(Nullable<int> id)
-        {
-            var idParameter = id.HasValue ?
-                new ObjectParameter("Id", id) :
-                new ObjectParameter("Id", typeof(int));
-    
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<ConsultarUsuario_Result>("ConsultarUsuario", idParameter);
-        }
     
         public virtual int crearUsuario(string nombre, Nullable<System.DateTime> fechaNacimiento, string sexo)
         {
@@ -83,11 +74,6 @@ namespace Project.users.dal.Model
                 new ObjectParameter("Id", typeof(int));
     
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("EliminarUsuario", idParameter);
-        }
-    
-        public virtual ObjectResult<ListarUsuarios_Result> ListarUsuarios()
-        {
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<ListarUsuarios_Result>("ListarUsuarios");
         }
     }
 }
