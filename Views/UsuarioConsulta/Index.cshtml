@@ -10,35 +10,39 @@
     @Html.ActionLink("Crear usuario", "Index" ,"Usuario")
 </p>
 <table class="table">
-    <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.Nombre)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.FechaNacimiento)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Sexo)
-        </th>
-        <th></th>
-    </tr>
+    
+        <tr>
+            <th class="active">
+                @Html.DisplayNameFor(model => model.Nombre)
+            </th>
+            <th class="active">
+                @Html.DisplayNameFor(model => model.FechaNacimiento)
+            </th>
+            <th class="active">
+                @Html.DisplayNameFor(model => model.Sexo)
+            </th>
+            <th class="active"></th>
+        </tr>
+    
+        @foreach (var item in Model)
+        {
 
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.Nombre)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.FechaNacimiento)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Sexo)
-        </td>
-        <td>
-            @Html.ActionLink("Editar", "Edit", new { id=item.Id }) |
-            @Html.ActionLink("Eliminar", "Deleteget", new { id=item.Id })
-        </td>
-    </tr>
-}
-
-</table>
+           
+               <tr>
+                   <td>
+                       @Html.DisplayFor(modelItem => item.Nombre)
+                   </td>
+                   <td>
+                       @Html.DisplayFor(modelItem => item.FechaNacimiento)
+                   </td>
+                   <td>
+                       @Html.DisplayFor(modelItem => item.Sexo)
+                   </td>
+                   <td>
+                       @Html.ActionLink("Editar", "Edit", new { id = item.Id} , new { @class = "btn btn-primary" }) 
+                       @Html.ActionLink("Eliminar", "Deleteget", new { id = item.Id }, new { @class = "btn btn-danger" })
+                   </td>
+               </tr>
+               }
+           
+           </table>
